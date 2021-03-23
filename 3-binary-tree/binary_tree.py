@@ -23,16 +23,8 @@ def insert(root, node):
             else:
                 insert(root.left, node)
 
-# A function for inorder tree traversal
-# def inorder(root):
-# 	if root:
-# 		inorder(root.left)
-# 		print(root.value)
-# 		inorder(root.right)
 
-
-def evenOddLevelDifference(root):
-
+def even_odd_level_difference(root):
     if (not root):
         return 0
 
@@ -86,7 +78,12 @@ insert(root, Node(5))
 insert(root, Node(6))
 insert(root, Node(7))
 insert(root, Node(8))
+# insert(root, Node(9))
+# insert(root, Node(10))
+# insert(root, Node(11))
+# insert(root, Node(12))
+# insert(root, Node(13))
 
 
-result = evenOddLevelDifference(root)
+result = even_odd_level_difference(root)
 print(result)
