@@ -1,0 +1,14 @@
+from heapq import heappush, heappop, heapify
+def Min(a):
+    heapify(a)
+    cost = 0
+    while len(a) > 1:
+        x = heappop(a )
+        y = heappop(a)
+        sum = x + y
+        heappush(a, sum)
+        cost += sum
+    return cost
+
+a = [5, 4, 2, 8]
+print(Min(a))
