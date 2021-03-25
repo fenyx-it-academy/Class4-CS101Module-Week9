@@ -1,0 +1,27 @@
+class Node():
+    def __init__(self, data, left=None, right=None):
+        self.data = data
+        self.left = left
+        self.right = right
+
+def fark(a, diff=0, level=1):
+    if a is None:
+        return diff
+    if level % 2 == 1:
+        diff = diff + a.data
+    else:
+        diff = diff - a.data
+    diff = fark(a.left, diff, level + 1)
+    diff = fark(a.right, diff, level + 1)
+    return diff
+
+a=Node(1)
+a.left=Node(2)
+a.right=Node(3)
+a.left.left=Node(4)
+a.right.left=Node(5)
+a.right.right=Node(6)
+a.right.left.left=Node(7)
+a.right.left.right=Node(8)
+
+print(fark(a))
